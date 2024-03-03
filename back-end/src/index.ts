@@ -1,9 +1,10 @@
-import { app, port } from "./server/server";
+import { app } from "./server/server";
+import { connectBD } from "./db/db";
 
-app.get('/', (req,res) => {
-    return res.send('Servidor, aivado')
-})
+connectBD()
 
-app.listen(port, () =>{
-    console.log(`Server iniciado no link http://localhost:${port}/`)
+
+
+app.listen(process.env.PORT || 8081, () =>{
+    console.log(`Server iniciado no link http://localhost:${process.env.PORT}/`)
 })

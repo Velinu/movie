@@ -1,7 +1,8 @@
 import express from 'express'
+import { router }  from '../routes/routes'
+import 'dotenv/config'
 const app = express()
-const port = 8081
+app.use(express.json())
+app.use(router)
 
-
-
-export {app, port}
+export {app}
