@@ -1,6 +1,5 @@
-import { ObjectId } from "mongodb"
+import mongoose from "mongoose"
 interface iMovie{
-    _id: ObjectId
     name: String,
     description: String,
     rating: Number,
@@ -12,14 +11,13 @@ interface iMovieMethods{
     getAllMovies(): Array<JSON>,
     getMovie(name: String): JSON,
     postMovie(
-        _id:Number,
+        _id: Number,
         name:String, 
         description: String, 
         rating: Number, 
         img: String, 
         status: 1 |  2 | 3): Response,
     patchMovie(
-        _id:Number,
         name:String, 
         description: String,
         rating: Number, 
